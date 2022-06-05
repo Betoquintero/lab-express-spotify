@@ -35,8 +35,19 @@ const spotifyApi = new SpotifyWebApi({
     spotifyApi
     .searchArtists(`${artist}`)
     .then(data => {
-    console.log('The received data from the API: ', data.body.artists);
+    //console.log('The received data from the API: ', data.body.artists);
     res.render('artist-search-results', data.body.artists);  
+  })
+    .catch(err => console.log('The error while searching artists occurred: ', err));
+  })
+
+  app.get('/albums/:id', (req, res, next) => {    
+    //res.json(res.data)
+    spotifyApi
+    .getArtistAlbums(req.params.id)
+    .then(data => {
+    console.log('The received data from the API: ', data.body);
+    res.render('albums', data.body);  
   })
     .catch(err => console.log('The error while searching artists occurred: ', err));
   })
