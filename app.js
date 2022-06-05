@@ -29,12 +29,14 @@ const spotifyApi = new SpotifyWebApi({
         res.render('index');
       })
 
-    app.get('/artist-search', async (req, res, next) => {
-        const { artist } = req.query;
+    app.get('/artist-search', (req, res, next) => {
+    const artist = req.query;
+    //res.json(res.data)
     spotifyApi
     .searchArtists(`${artist}`)
     .then(data => {
-    res.render('artist-search-results', data.body);  
+    console.log('The received data from the API: ', data.body.artists);
+    res.render('artist-search-results', data.body.artists);  
   })
     .catch(err => console.log('The error while searching artists occurred: ', err));
   })

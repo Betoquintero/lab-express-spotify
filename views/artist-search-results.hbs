@@ -1,9 +1,8 @@
 <div>
-    {{#each item}}
-    <h1> name: "{{name}}"</h1>
-    {{/each}}
+    {{#each items}}
+    <h2> name: {{ name }}</h2>    
     {{#each images}}
-    <p><img src = "{{url}}" alt="{{name}}"/></p>
-    {{/each}}
-    
+    <p>image: <img src = "{{ url }}"  alt="{{ name }}"/></p>
+    {{/each}} 
+    {{/each}}   
 </div>
