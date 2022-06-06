@@ -1,0 +1,27 @@
+
+h1 {
+    margin-left: 710px;
+    margin-top: 500px;
+}
+
+#index {
+    background-image: url("/images/spotify-background.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;        
+}
+
+#index-form {
+    margin: 10%%;
+    margin-left: 600px;
+
+}
+
+
+
+button {
+    border-radius: 7%;
+    color: white;
+    background-color: rgb(196, 56, 75);
+    margin-bottom: 400px;
+
+}
