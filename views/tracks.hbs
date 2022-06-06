@@ -1,0 +1,18 @@
+<ul>
+    {{#each items}}
+    <li>
+    <h2> name: {{ name }}</h2>  
+    {{#if preview_url}}  
+    <figure>
+        <figcaption> Preview</figcaption>
+        <audio controls src ="{{preview_url}}">
+            your browser does not support the 
+            <code>audio</code> element.
+        </audio>
+    </figure>
+    {{else}}
+        <p>No audio track available</p>
+    {{/if}}
+    </li>
+    {{/each}}  
+</ul>
